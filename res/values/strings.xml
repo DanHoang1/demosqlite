@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">demosqlite</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+	<string name="title" >Mydatabase</string>
+	<string name="name">Name</string>
+	<string name="password">Password</string>
+	<string name="email">Email</string>
+	<string name="phone">Phone</string>
+	<string name="place">Place</string>
+	<string name="UserInformation">User Information</string>
+	<string name="id">ID</string>
+</resources>
