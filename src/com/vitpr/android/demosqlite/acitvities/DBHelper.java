@@ -141,10 +141,10 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
  
-    public Integer deleteTitle(String name) 
+    public Integer deleteTitle(int id) 
     {	SQLiteDatabase db = this.getWritableDatabase();
         //return db.delete(TABLE_CONTACTS, KEY_NAME + "=" + name, null)>0;
-    	return db.delete(TABLE_CONTACTS, "name=?",new String[]{name});
+    	return db.delete(TABLE_CONTACTS, "id=?",new String[]{});
     }
     public Cursor searchByInputText(String inputText)  {
     	SQLiteDatabase db = this.getWritableDatabase();

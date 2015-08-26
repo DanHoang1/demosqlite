@@ -1,15 +1,12 @@
 package com.vitpr.android.demosqlite.acitvities;
 
-import android.R.integer;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class EditPage extends Activity implements OnClickListener {
 	private String mode;
@@ -48,13 +45,11 @@ public class EditPage extends Activity implements OnClickListener {
 //		if (mode.trim().equalsIgnoreCase("add")) {
 //			mBtdelete.setEnabled(false);
 //	}
-		
-	}
-
+	}	
 	public void onClick(View v) {
 		// get values from the spinner and the input text fields
 		// String myContinent = continentList.getSelectedItem().toString();
-		String myID = mEtid.getText().toString();
+		int myID = Integer.parseInt(mEtid.getText()+"");
 		String myName = mEtname.getText().toString();
 		String myEmail = mEtemail.getText().toString();
 		String myPassword = mEtpassword.getText().toString();
@@ -100,7 +95,7 @@ public class EditPage extends Activity implements OnClickListener {
 			break;
 		case R.id.detail_bt_delete:
 			DBHelper delete = new DBHelper(this);
-			Contact contact1 = new Contact( myName, myEmail, myPassword, myPhone, myPlace);
+			Contact contact1 = new Contact(myID,myName, myEmail, myPassword, myPhone, myPlace);
 			contact1._id		=myID;
 			contact1._name		=myName;
 			contact1._email		=myEmail;
@@ -108,7 +103,7 @@ public class EditPage extends Activity implements OnClickListener {
 			contact1._phone		=myPhone;
 			contact1._place		=myPlace;
 			//delete.deleteContact(contact1);
-			delete.deleteTitle(contact1._name);
+			delete.deleteContact(contact1);
 			Log.e("loi roi",myName);
 			finish();
 			break;
